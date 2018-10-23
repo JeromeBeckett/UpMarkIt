@@ -2,7 +2,7 @@
 
 error_reporting(0);
 
-class markdownParser {
+class UpMarkIt {
 
 	function parseFile($filename, $outputFile, $includeStyling) {
 		if(file_exists($filename)) {
@@ -170,10 +170,10 @@ class markdownParser {
 					$html .= "<ul><li>";
 					$miscLineData['listLevel'] += 1;
 					break;
-				case 2:
+/*				case 2:
 					list($openCode, $miscLineData) = $this->openCode($line, $miscLineData);
 					$html .= $openCode;
-					break;
+					break;*/
 				default:
 					if($levelDiff < 0) {
 						$html .= $this->closeElements("</li></ul>", abs($levelDiff));
@@ -406,14 +406,14 @@ class markdownParser {
 
 }
 
-$markdownParser = new markdownParser;
+$UpMarkIt = new UpMarkIt;
 
 echo "\n---------------\n";
 
 $options = getopt('f:s:o::c::');
 
-if($options['f']) $markdownParser->parseFile($options['f'], $options['o'], $options['c']);
-else if($options['s']) $markdownParser->parseString($options['s'], $options['o'], $options['c']);
+if($options['f']) $UpMarkIt->parseFile($options['f'], $options['o'], $options['c']);
+else if($options['s']) $UpMarkIt->parseString($options['s'], $options['o'], $options['c']);
 else echo "Error: incorrect parameters supplied.";
 
 echo "\n---------------\n";

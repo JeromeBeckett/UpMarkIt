@@ -1,5 +1,5 @@
 # UpMarkIt
-A command line interface for parsing markdown to HTML written in PHP and DOS. This follows the [traditional syntax](https://daringfireball.net/projects/markdown/syntax) as created by John Gruber.
+A command line interface for parsing markdown to HTML written in PHP and DOS. This follows the [traditional syntax](https://daringfireball.net/projects/markdown/syntax) as created by John Gruber. The markdown.md is a file you can use to test the conversion if you want.
 
 ## Usage
 These instructions are for Windows. For Mac and Linux please look up the relevant terminal commands and syntax.
@@ -47,4 +47,3 @@ These include:
   + Escape characters
   + Code blocks using indentation (backticks are fine)
   + Blockquotes inside lists
-  + Sometimes elements will wrongly be wrapped in code blocks

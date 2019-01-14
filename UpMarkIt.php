@@ -330,7 +330,10 @@ class UpMarkIt {
 
 		list($inlineHtml, $lineContents) = $this->processInlineElements($html, $line, $lineContents);
 
-		return array($html.$inlineHtml, $lineContents, $miscData);
+		$lineBreak = preg_match('/ {2,}$/m', $line) ? "<br>" : "";
+		$outputLine = $html.$inlineHtml.$lineBreak;
+
+		return array($outputLine, $lineContents, $miscData);
 	}
 
 
